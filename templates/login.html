@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Вход в приложението - Document Manager{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body text-center">
+                <h2 class="card-title mb-4">Вход в приложението</h2>
+                
+                <div class="d-grid gap-3">
+                    <a href="{{ url_for('admin_login') }}" class="btn btn-danger btn-lg">
+                        <i class="fas fa-lock"></i> Вход за администратори
+                    </a>
+                    
+                    <a href="{{ url_for('user_access') }}" class="btn btn-success btn-lg">
+                        <i class="fas fa-users"></i> Вход за потребители
+                    </a>
+                </div>
+                
+                <!-- Футър -->
+                <div class="text-center mt-4 pt-3 border-top">
+                    <small class="text-muted">
+                        Създадено от <a href="https://teodor-chupetlov.eu" target="_blank" class="text-decoration-none">teodor-chupetlov.eu</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
