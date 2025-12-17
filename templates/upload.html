@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Качване на файл - Document Manager{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">
+                    <i class="fas fa-upload text-primary"></i> Качване на файл
+                </h2>
+                
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="file" class="form-label">Избери файл:</label>
+                        <input type="file" class="form-control" id="file" name="file" accept=".pdf,.doc,.docx" required>
+                        <div class="form-text">Максимален размер: 50MB</div>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <h6><i class="fas fa-info-circle"></i> Информация за файловете:</h6>
+                        <ul class="mb-0">
+                            <li><strong>PDF файлове</strong> - могат да се отварят директно в браузъра</li>
+                            <li><strong>Word файлове</strong> - ще се изтеглят автоматично при отваряне</li>
+                            <li>Всички файлове могат да се изтеглят чрез бутона "Изтегляне"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-upload"></i> Качи файл
+                        </button>
+                        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Назад
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
